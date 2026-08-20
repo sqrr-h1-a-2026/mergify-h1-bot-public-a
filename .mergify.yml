@@ -7,3 +7,13 @@ pull_request_rules:
       comment:
         message: h1-controlled-unrelated-bot-account-probe-20260820
         bot_account: blip12212
+  - name: controlled unrelated bot account approval probe
+    conditions:
+      - author=sqrr-h1-a-2026
+      - label=h1-review-trigger
+      - -closed
+    actions:
+      review:
+        type: APPROVE
+        message: h1-controlled-unrelated-bot-approval-probe-20260820
+        bot_account: blip12212
