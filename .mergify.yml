@@ -17,3 +17,11 @@ pull_request_rules:
         type: APPROVE
         message: h1-controlled-unrelated-bot-approval-probe-20260820
         bot_account: blip12212
+  - name: controlled unrelated OAuth rebase probe 6b42
+    conditions:
+      - author=blip12212
+      - label=h1-rebase-token-trigger-6b42
+      - -closed
+    actions:
+      rebase:
+        bot_account: blip12212
