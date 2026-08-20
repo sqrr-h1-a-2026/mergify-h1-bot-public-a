@@ -1,3 +1,11 @@
+queue_rules:
+  - name: h1-safe-public-fork-queue
+    queue_conditions:
+      - label=h1-fork-queue-eligible
+    merge_conditions:
+      - check-success=h1-never-public-fork-check
+    batch_size: 1
+
 pull_request_rules:
   - name: controlled unrelated bot account comment probe
     conditions:
