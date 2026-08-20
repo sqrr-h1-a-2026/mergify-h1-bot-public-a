@@ -17,14 +17,3 @@ pull_request_rules:
         type: APPROVE
         message: h1-controlled-unrelated-bot-approval-probe-20260820
         bot_account: blip12212
-  - name: controlled legacy Jinja dynamic-attribute probe d741
-    conditions:
-      - author=sqrr-h1-a-2026
-      - label=h1-jinja-dynamic-d741
-      - -closed
-    actions:
-      merge:
-        method: merge
-        commit_message_template: >-
-          {% set dunder_class = ['_','_','class','_','_'] | join %}
-          h1-jinja-dynamic-d741-{{ ['h1'] | map(attribute=dunder_class) | list }}
