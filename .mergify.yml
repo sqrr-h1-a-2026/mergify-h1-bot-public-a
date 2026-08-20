@@ -1,5 +1,3 @@
-extends: mergify-h1-fixture-a
-
 pull_request_rules:
   - name: controlled unrelated bot account comment probe
     conditions:
