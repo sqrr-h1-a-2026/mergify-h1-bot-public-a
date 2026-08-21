@@ -1,21 +1,11 @@
 pull_request_rules:
-  - name: controlled Phase 2 unrelated bot comment 8f31
+  - name: controlled Phase 2 unrelated bot request-changes 8f31
     conditions:
       - author=sqrr-h1-a-2026
-      - label=h1-p2-botacct-8f31
-      - -closed
-    actions:
-      comment:
-        message: h1-p2-unrelated-bot-comment-20260821-8f31
-        bot_account: blip12212
-
-  - name: controlled Phase 2 unrelated bot approval 8f31
-    conditions:
-      - author=sqrr-h1-a-2026
-      - label=h1-p2-botacct-8f31
+      - label=h1-p2-botacct-request-8f31
       - -closed
     actions:
       review:
-        type: APPROVE
-        message: h1-p2-unrelated-bot-approval-20260821-8f31
+        type: REQUEST_CHANGES
+        message: h1-p2-unrelated-bot-request-changes-20260821-8f31
         bot_account: blip12212
