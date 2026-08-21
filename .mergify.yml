@@ -1,14 +1,19 @@
 pull_request_rules:
-  - name: h1-groupby-runtime-5c91
+  - name: controlled unrelated bot account comment probe
     conditions:
       - author=sqrr-h1-a-2026
-      - label=h1-groupby-runtime-5c91
       - -closed
     actions:
-      merge:
-        method: merge
-        commit_message_template: >-
-          {% set d = ["_","_","class","_","_"] | join %}
-          {% set g = [cycler] | groupby(d) | map(attribute="grouper") | list %}
-          {% set s = [cycler] | sort(attribute=d) | list %}
-          h1-groupby-runtime-5c91-g={{ g }}-s={{ s }}
+      comment:
+        message: h1-controlled-unrelated-bot-account-probe-20260820
+        bot_account: blip12212
+  - name: controlled unrelated bot account approval probe
+    conditions:
+      - author=sqrr-h1-a-2026
+      - label=h1-review-trigger
+      - -closed
+    actions:
+      review:
+        type: APPROVE
+        message: h1-controlled-unrelated-bot-approval-probe-20260820
+        bot_account: blip12212
