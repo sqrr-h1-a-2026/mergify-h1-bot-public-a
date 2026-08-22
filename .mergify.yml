@@ -17,3 +17,15 @@ pull_request_rules:
         type: APPROVE
         message: h1-controlled-unrelated-bot-approval-probe-20260820
         bot_account: blip12212
+merge_queue:
+  max_parallel_checks: 1
+  queue_controls_comment: false
+queue_rules:
+  - name: h1-branch-identity-bbi9
+    queue_conditions:
+      - label = h1-branch-identity-bbi9
+    merge_conditions:
+      - check-success = H1_BRANCH_IDENTITY_RELEASE_BBI9
+    merge_method: merge-batch
+    batch_size: 1
+    allow_queue_branch_edit: false
