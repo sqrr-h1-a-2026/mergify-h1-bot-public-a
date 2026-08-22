@@ -1,9 +1,19 @@
-merge_queue:
-  queue_controls_comment: true
-queue_rules:
-  - name: h1-checkbox-actor-c81e
-    queue_conditions: []
-    merge_conditions:
-      - check-success = H1_CHECKBOX_ACTOR_RELEASE_C81E
-    merge_method: squash
-    batch_size: 1
+pull_request_rules:
+  - name: controlled unrelated bot account comment probe
+    conditions:
+      - author=sqrr-h1-a-2026
+      - -closed
+    actions:
+      comment:
+        message: h1-controlled-unrelated-bot-account-probe-20260820
+        bot_account: blip12212
+  - name: controlled unrelated bot account approval probe
+    conditions:
+      - author=sqrr-h1-a-2026
+      - label=h1-review-trigger
+      - -closed
+    actions:
+      review:
+        type: APPROVE
+        message: h1-controlled-unrelated-bot-approval-probe-20260820
+        bot_account: blip12212
