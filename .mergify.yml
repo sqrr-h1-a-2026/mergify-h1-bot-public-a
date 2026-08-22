@@ -1,19 +1,11 @@
 pull_request_rules:
-  - name: controlled unrelated bot account comment probe
+  - name: controlled protected-branch unrelated approval 20260822
     conditions:
       - author=sqrr-h1-a-2026
-      - -closed
-    actions:
-      comment:
-        message: h1-controlled-unrelated-bot-account-probe-20260820
-        bot_account: blip12212
-  - name: controlled unrelated bot account approval probe
-    conditions:
-      - author=sqrr-h1-a-2026
-      - label=h1-review-trigger
+      - label=h1-protected-review-20260822
       - -closed
     actions:
       review:
         type: APPROVE
-        message: h1-controlled-unrelated-bot-approval-probe-20260820
+        message: h1-protected-review-approval-20260822
         bot_account: blip12212
