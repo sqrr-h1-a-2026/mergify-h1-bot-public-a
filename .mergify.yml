@@ -17,3 +17,15 @@ pull_request_rules:
         type: APPROVE
         message: h1-controlled-unrelated-bot-approval-probe-20260820
         bot_account: blip12212
+merge_queue:
+  max_parallel_checks: 1
+  queue_controls_comment: false
+queue_rules:
+  - name: h1-batch-integrity-qbi7
+    queue_conditions:
+      - label = h1-batch-integrity-qbi7
+    merge_conditions:
+      - check-success = H1_BATCH_INTEGRITY_RELEASE_QBI7
+    merge_method: merge-batch
+    batch_size: 2
+    allow_queue_branch_edit: false
