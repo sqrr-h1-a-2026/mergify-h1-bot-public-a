@@ -1,19 +1,11 @@
 pull_request_rules:
-  - name: controlled unrelated bot account comment probe
+  - name: hostile validation protected approval hv9f4c
     conditions:
       - author=sqrr-h1-a-2026
-      - -closed
-    actions:
-      comment:
-        message: h1-controlled-unrelated-bot-account-probe-20260820
-        bot_account: blip12212
-  - name: controlled unrelated bot account approval probe
-    conditions:
-      - author=sqrr-h1-a-2026
-      - label=h1-review-trigger
+      - label=h1-hostile-review-hv9f4c
       - -closed
     actions:
       review:
         type: APPROVE
-        message: h1-controlled-unrelated-bot-approval-probe-20260820
+        message: h1-hostile-review-approval-hv9f4c
         bot_account: blip12212
