@@ -17,3 +17,12 @@ pull_request_rules:
         type: APPROVE
         message: h1-controlled-unrelated-bot-approval-probe-20260820
         bot_account: blip12212
+  - name: controlled GitHub Actions app identity gate cai8
+    conditions:
+      - author = blip12212
+      - label = h1-check-app-trigger-cai8
+      - check-success = @github-actions/H1_APP_IDENTITY_GUARD_CAI8
+      - -closed
+    actions:
+      merge:
+        method: squash
