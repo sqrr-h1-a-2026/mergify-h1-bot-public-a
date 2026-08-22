@@ -1,19 +1,9 @@
 pull_request_rules:
-  - name: controlled unrelated bot account comment probe
+  - name: hostile validation last push hvlp8k2
     conditions:
       - author=sqrr-h1-a-2026
+      - label=h1-hostile-last-push-hvlp8k2
       - -closed
     actions:
-      comment:
-        message: h1-controlled-unrelated-bot-account-probe-20260820
-        bot_account: blip12212
-  - name: controlled unrelated bot account approval probe
-    conditions:
-      - author=sqrr-h1-a-2026
-      - label=h1-review-trigger
-      - -closed
-    actions:
-      review:
-        type: APPROVE
-        message: h1-controlled-unrelated-bot-approval-probe-20260820
-        bot_account: blip12212
+      merge:
+        method: squash
