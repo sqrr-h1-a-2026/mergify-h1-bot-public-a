@@ -1,0 +1,13 @@
+name: H1 App identity trusted control CAI8
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  trusted-control:
+    name: H1_APP_IDENTITY_GUARD_CAI8
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deliberately fail the trusted control
+        run: 'exit 1'
+
