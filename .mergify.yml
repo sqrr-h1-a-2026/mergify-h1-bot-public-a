@@ -1,19 +1,9 @@
-pull_request_rules:
-  - name: controlled unrelated bot account comment probe
-    conditions:
-      - author=sqrr-h1-a-2026
-      - -closed
-    actions:
-      comment:
-        message: h1-controlled-unrelated-bot-account-probe-20260820
-        bot_account: blip12212
-  - name: controlled unrelated bot account approval probe
-    conditions:
-      - author=sqrr-h1-a-2026
-      - label=h1-review-trigger
-      - -closed
-    actions:
-      review:
-        type: APPROVE
-        message: h1-controlled-unrelated-bot-approval-probe-20260820
-        bot_account: blip12212
+merge_protections_settings:
+  auto_merge_conditions:
+    - label = h1-mp-retarget-mpr8x6
+merge_protections:
+  - name: direct Merge Protections merge only from h1-mp-unprotected-base-mpr8x6
+    if:
+      - base = h1-mp-unprotected-base-mpr8x6
+    success_conditions:
+      - label = h1-mp-retarget-mpr8x6
